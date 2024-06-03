@@ -65,3 +65,15 @@ int main()
 
     return 0;
 }
+
+// sample Run
+
+/*
+Enter the number of items: 3
+Enter the profits and weights of each item:
+25 18
+24 15
+15 10
+Enter the capacity of knapsack: 20
+Maximum profit: 31.50
+*/
