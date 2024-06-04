@@ -46,7 +46,7 @@ double maxProfit(int capacity, struct Item items[], int n)
 int main()
 {
     int numItems, capacity;
-    printf("Enter the number of items: ");
+    printf("Enter the number of items : ");
     scanf("%d", &numItems);
 
     struct Item items[numItems];
@@ -57,7 +57,7 @@ int main()
         items[i].ratio = (double)items[i].profit / items[i].weight;
     }
 
-    printf("Enter the capacity of knapsack: ");
+    printf("Enter the capacity of knapsack : ");
     scanf("%d", &capacity);
 
     double max = maxProfit(capacity, items, numItems);
@@ -69,11 +69,11 @@ int main()
 // sample Run
 
 /*
-Enter the number of items: 3
+Enter the number of items : 3
 Enter the profits and weights of each item:
 25 18
 24 15
 15 10
-Enter the capacity of knapsack: 20
+Enter the capacity of knapsack : 20
 Maximum profit: 31.50
 */
