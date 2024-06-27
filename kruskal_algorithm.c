@@ -79,16 +79,17 @@ void kruskalAlgorithm(int numEdges, int edges[][3], int numVertices)
         {
             unionSets(rootU, rootV, parent, rank, numVertices);
             minCost += weight;
-            printf("%d -- %d == %d\n", u, v, weight);
+            printf("%d ---- %d == %d\n", u, v, weight);
         }
     }
 
-    printf("Minimum Cost of Spanning Tree: %d\n", minCost);
+    printf("Minimum Cost of Spanning Tree is : %d\n", minCost);
 }
 
 // Main function
 int main()
 {
+    // user input as runtime
     int edges[5][3] = {
         {0, 1, 8},
         {0, 2, 11},

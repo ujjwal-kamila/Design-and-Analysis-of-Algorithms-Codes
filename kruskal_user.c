@@ -86,6 +86,7 @@ void kruskalAlgorithm(int numEdges, int edges[][3], int numVertices)
 // Main function for User Input at Runtime
 int main()
 {
+    // user input at compile time
     int numVertices, numEdges;
     // Get the number of vertices and edges from the user
     printf("Enter the number of vertices: ");
