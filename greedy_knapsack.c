@@ -66,8 +66,6 @@ int main()
     return 0;
 }
 
-// sample Run
-
 /*
 Enter the number of items : 3
 Enter the profits and weights of each item:
