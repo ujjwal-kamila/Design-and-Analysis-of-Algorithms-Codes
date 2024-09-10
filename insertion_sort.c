@@ -1,92 +1,90 @@
-// #include <stdio.h>
-// int main()
-// {
-//     int n, i, j, temp;
-//     int arr[64];
-//     // Asking the user to input the number of elements
-//     printf("Enter number of elements: \n");
-//     scanf("%d", &n);
-//     // Checking if the number of elements exceeds the size of the array
-//     if (n > 64) {
-//         printf("Number of elements exceeds the size of the array.\n");
-//         return 0;
-//     }
-//     // Asking the user to input the elements
-//     printf("Enter %d elements: \n", n);
-//     for (i = 0; i < n; i++)
-//     {
-//         scanf("%d", &arr[i]);
-//     }
-//     // Printing the given array
-//     printf("Given array: \n");
-//     for (i = 0; i < n; i++)
-//     {
-//         printf("%d  ", arr[i]);
-//     }
-//     printf("\n");
-//     // Sorting the array using insertion sort algorithm
-//     for (i = 1; i < n; i++)
-//     {
-//         j = i;
-//         // Shift elements of arr[0..i-1], that a4e greater than key, to one position ahead
-//         // of their current position
-//         while (j > 0 && arr[j - 1] > arr[j])
-//         {
-//             // Swapping the elements if they are in the wrong order
-//             temp = arr[j];
-//             arr[j] = arr[j - 1];
-//             arr[j - 1] = temp;
-//             j--;
-//         }
-//     }
-//     // Printing the sorted array in ascending order
-//     printf("Sorted list in ascending order:\n");
-//     for (i = 0; i < n; i++)
-//     {
-//         printf("%d  ", arr[i]);
-//     }
-//     return 0;
-// }
+//Insertion Sort for int values
+#include <stdio.h>
+
+void insertionSortInt(int arr[], int n) {
+    int i, j, key;     
+
+    for (i = 1; i < n; i++) {
+        key = arr[i];   // Store the current element as the key
+        j = i - 1;      // Set the comparison index to the previous element
+
+        // Move elements that are greater than the key to one position ahead
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];  // Shift element to the right
+            j = j - 1;            // Move one position back
+        }
+        arr[j + 1] = key;         // Insert the key in its correct position
+    }
+}
+
+// Function to print the array
+void printArrayInt(int arr[], int n) {
+    int i;
+    for (i = 0; i < n; i++)
+        printf("%d ", arr[i]);    
+    printf("\n");
+}
+
+int main() {
+    int n; 
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+    int arr[n]; 
+    printf("Enter %d integer elements:\n", n);
+    // Input the array elements
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    insertionSortInt(arr, n);  
+    printf("Sorted array: \n");
+    printArrayInt(arr, n);     
+    return 0;
+}
 
 
-
-
+/*
+//Insertion Sort for float values
 #include <stdio.h>
 
 void insertionSort(float arr[], int n) {
-    int i, j;
-    float key;
+    int i, j;          
+    float key;         
+
+    // Loop through elements, starting from the second element (index 1)
     for (i = 1; i < n; i++) {
-        key = arr[i];
-        j = i - 1;
+        key = arr[i];   // Store the current element as the key
+        j = i - 1;      // Set the comparison index to the previous element
+
+        // Move elements that are greater than the key to one position ahead
         while (j >= 0 && arr[j] > key) {
-            arr[j + 1] = arr[j];
-            j = j - 1;
+            arr[j + 1] = arr[j];  // Shift element to the right
+            j = j - 1;            // Move one position back
         }
         arr[j + 1] = key;
     }
 }
 
+// Function to print the array
 void printArray(float arr[], int n) {
     int i;
     for (i = 0; i < n; i++)
-        printf("%.2f ", arr[i]);
-    printf("\n");
+        printf("%.2f ", arr[i]); 
+    printf("\n");           
 }
 
 int main() {
-    int n;
+    int n;  
     printf("Enter the number of elements: ");
     scanf("%d", &n);
-
-    float arr[n];
+    float arr[n];  
     printf("Enter %d float elements:\n", n);
+    // Input the array elements
     for (int i = 0; i < n; i++) {
         scanf("%f", &arr[i]);
     }
-
     insertionSort(arr, n);
     printf("Sorted array: \n");
     printArray(arr, n);
     return 0;
 }
+*/
